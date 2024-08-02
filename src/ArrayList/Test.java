@@ -11,6 +11,8 @@ public class Test {
 
 		stringlist.remove("a");
 		stringlist.remove(0);
+		
+	
 
 		System.out.println(stringlist);
 

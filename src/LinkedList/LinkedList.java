@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.NoSuchElementException;
 
-public class LinkedList {
+public class LinkedList<E> {
 
 	private Node first;
 	private Node last;
@@ -38,14 +38,14 @@ public class LinkedList {
 	}
 
 	// indexOf
-	public int indexOf(int value) {
+	public int indexOf(E i) {
 
 		int index = 0;
 		Node current = first;
 
 		while (current != null) {
 
-			if (current.getValue() == value)
+			if (current.getValue() == i)
 				return index;
 
 			current = current.getNext();
@@ -57,7 +57,7 @@ public class LinkedList {
 	}
 
 	// contains
-	public boolean contains(int value) {
+	public boolean contains(E value) {
 		return indexOf(value) != -1;
 		// if -1 means the value is not in the list
 		// any number != -1 true
@@ -142,8 +142,8 @@ public class LinkedList {
 	}
 
 	// toArray
-	public int[] toArray() {
-		int[] array = new int[size];
+	public Object[] toArray() {
+		Object[] array = new Object[size];
 		Node current = first;
 		int index = 0;
 		while (current != null) {
@@ -203,7 +203,7 @@ public class LinkedList {
 	}
 
 	// get k'th Node's value from the end of the LinkedList
-	public int getKthFromTheEnd(int k) {
+	public E getKthFromTheEnd(int k) {
 
 		if (isEmpty())
 			throw new IllegalStateException();
@@ -225,7 +225,7 @@ public class LinkedList {
 			faster = faster.getNext();
 		}
 
-		return slower.getValue();
+		return (E) slower.getValue();
 	}
 
 	// Check weather first node empty or not

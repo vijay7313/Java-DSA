@@ -1,24 +1,29 @@
 package ArrayExercise;
 
 public class SingleDimensionArray {
-	int arr[] = null;
+	int[] arr;
 
-	public SingleDimensionArray(int arraySize) {
+	int size;
 
-		arr = new int[arraySize];
+	public SingleDimensionArray(int capacity) {
+
+		arr = new int[capacity];
 
 	}
 
 	public void insert(int location, int value) {
-		try {
 
-			if (arr[location] == 0)
-				arr[location] = value;
-			else
-				System.out.println("This cell already occupied!");
+		if (isFull())
+			throw new ArrayIndexOutOfBoundsException();
 
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("Invalid index to access the array!");
+		else {
+			arr[location] = value;
+			size++;
 		}
+
+	}
+
+	public boolean isFull() {
+		return size == arr.length;
 	}
 }

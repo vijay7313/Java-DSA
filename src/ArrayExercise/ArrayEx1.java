@@ -5,9 +5,11 @@ import java.util.Arrays;
 public class ArrayEx1 {
 
 	public static int[] middle(int[] array) {
+
 		int[] returnValue = new int[array.length - 2];
+
 		int count = 0;
-		// TODO
+
 		for (int i = 1; i < array.length - 1; i++)
 
 			returnValue[count++] = array[i];
@@ -20,7 +22,6 @@ public class ArrayEx1 {
 
 		System.out.println(Arrays.toString(middle(array)));
 
-		
 //		Write a function called middle that takes an array and 
 //		returns a new array that contains all but the first and last elements.
 

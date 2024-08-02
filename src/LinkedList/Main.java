@@ -6,24 +6,25 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		LinkedList list = new LinkedList();
+		LinkedList<Integer> list = new LinkedList<>();
+
 		list.addLast(10);
 		list.addLast(20);
 		list.addLast(30);
 		list.addLast(40);
 
-//		list.removeFirst();
+		list.removeFirst();
 
 		list.addFirst(5);
-//		list.addFirst(2);
-//		list.addFirst(22);
+		list.addFirst(2);
+		list.addFirst(22);
 
-//		list.removeLast();
+		list.removeLast();
 
-//		System.out.println(list.getKthFromTheEnd(2)); 
+		System.out.println(list.getKthFromTheEnd(4));
 
-//		int[] array = list.toArray();
-//		System.out.println(Arrays.toString(array));
+		Object[] array = list.toArray();
+		System.out.println(Arrays.toString(array));
 
 //		list.reverse();
 

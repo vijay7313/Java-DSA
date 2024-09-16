@@ -18,11 +18,13 @@ public class TreeMain {
 
 		tree1.insert(8);
 
-		tree1.insert(10);
-
 		tree1.insert(5);
 
-		System.out.println(tree1.getAncestors(5));
+		System.out.println(tree1.getSumOfAllPaths());
+
+//		System.out.println(tree1.getSumOfRootToLeafNumbers());
+
+//		System.out.println(tree1.getAncestors(5));
 
 //		System.out.println(tree1.areSibling(1, 5));
 

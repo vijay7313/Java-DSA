@@ -2,16 +2,13 @@ package ArrayExercise;
 
 public class ArrayEx4 {
 
-	static int findMissingNumberInArray(int[] arr) {
+	static int findMissingNumberInArray(int[] arr, int sumOfGivenArray) {
 
 		int n = arr.length + 1;
 
 		int sumOfLinearArr = (n * (n + 1)) / 2;
 
-		int sumOfGivenArray = 0;
-
-		for (int number:arr)
-
+		for (int number : arr)
 			sumOfGivenArray += number;
 
 		return sumOfLinearArr - sumOfGivenArray;
@@ -20,10 +17,10 @@ public class ArrayEx4 {
 
 	public static void main(String[] args) {
 		int[] array = { 1, 2, 3, 4, 6 };
-		System.out.println(findMissingNumberInArray(array));
+		System.out.println(findMissingNumberInArray(array, 0));
 
 		// output should return missing element in array
-		
+
 //		Write Java function called findMissingNumberInArray that takes
 //		an integer array containing n-1 unique elements from a range of 1 to n,
 //		with one missing number, and returns the missing number.
@@ -32,7 +29,6 @@ public class ArrayEx4 {
 //
 //		myArray = {1,2,3,4,6}
 //		findMissingNumberInArray(myArray, 6) // 5
-		
-		
+
 	}
 }

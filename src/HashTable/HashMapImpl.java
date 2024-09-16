@@ -29,21 +29,21 @@ public class HashMapImpl {
 
 	public void put(int key, String value) {
 
-		var entry = getEntry(key);
+		Entry entry = getEntry(key);
 
 		if (entry != null) {
 			entry.value = value;
 			return;
 		}
 
-		var bucket = getOrCreateBucket(key);
+		LinkedList<Entry> bucket = getOrCreateBucket(key);
 
 		bucket.add(new Entry(key, value));
 	}
 
 	public String get(int key) {
 
-		var entry = getEntry(key);
+		Entry entry = getEntry(key);
 
 		return (entry == null) ? null : entry.value;
 
@@ -51,12 +51,12 @@ public class HashMapImpl {
 
 	public void remove(int key) {
 
-		var entry = getEntry(key);
+		Entry entry = getEntry(key);
 
 		if (entry == null)
 			throw new IllegalStateException();
 
-		var bucket = getBucket(key);
+		LinkedList<Entry> bucket = getBucket(key);
 
 		bucket.remove(entry);
 
@@ -64,9 +64,9 @@ public class HashMapImpl {
 
 	private LinkedList<Entry> getOrCreateBucket(int key) {
 
-		var index = hashFunction(key);
+		int index = hashFunction(key);
 
-		var bucket = entries[index];
+		LinkedList<Entry> bucket = entries[index];
 
 		if (bucket == null)
 			bucket = entries[index] = new LinkedList<>();
@@ -83,10 +83,10 @@ public class HashMapImpl {
 
 	private Entry getEntry(int key) {
 
-		var bucket = getBucket(key);
+		LinkedList<Entry> bucket = getBucket(key);
 
 		if (bucket != null)
-			for (var entry : bucket)
+			for (Entry entry : bucket)
 				if (entry.key == key)
 					return entry;
 
@@ -97,7 +97,6 @@ public class HashMapImpl {
 	private int hashFunction(int key) {
 
 		return key % capacity;
-
 	}
 
 }

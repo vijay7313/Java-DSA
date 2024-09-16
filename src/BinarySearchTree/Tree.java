@@ -22,6 +22,52 @@ public class Tree {
 		}
 	}
 
+	public int getSumOfRootToLeafNumbers() {
+		return sumNumbers(root);
+	}
+
+	public int sumNumbers(Node root) {
+		return dfs(root, 0);
+	}
+
+	private int dfs(Node node, int currentNumber) {
+
+		if (node == null)
+			return 0;
+
+		currentNumber = currentNumber * 10 + node.value;
+
+		if (node.leftChild == null && node.rightChild == null)
+			return currentNumber;
+
+		int leftSum = dfs(node.leftChild, currentNumber);
+		int rightSum = dfs(node.rightChild, currentNumber);
+
+		return leftSum + rightSum;
+	}
+
+	
+	public int getSumOfAllPaths() {
+		return sumOfPath(root);
+	}
+
+	public int sumOfPath(Node root) {
+		return sumOfAllPath(root, 0);
+	}
+	private int sumOfAllPath(Node node, int pathCount) {
+
+		if (node == null)
+			return 0;
+
+		if (node.leftChild == null && node.rightChild == null)
+			return pathCount;
+
+		int leftSum = dfs(node.leftChild, pathCount + 1);
+		int rightSum = dfs(node.rightChild, pathCount + 1);
+
+		return leftSum + rightSum;
+	}
+
 	public void insert(int value) {
 
 		var node = new Node(value);

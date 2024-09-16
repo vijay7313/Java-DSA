@@ -11,7 +11,7 @@ public class Initialization {
 		System.out.println("Starting main...");
 		System.out.println("Accessing Child.staticField: " + Child.staticField);
 		Child.staticMethod();
-		System.out.println("Main execution complete.");
+		System.out.println("Calculator execution complete.");
 	}
 }
 

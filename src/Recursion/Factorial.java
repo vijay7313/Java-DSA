@@ -10,6 +10,7 @@ public class Factorial {
 
 	public static int multiplier(int num) {
 
+		
 		int mul = 0;
 
 		if (num == 0) // Base case

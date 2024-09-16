@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArrayEx6 {
 
-	public static int removeDuplicates(int[] nums) {
+	public static int[] removeDuplicates(int[] nums) {
 
 		int count = 0;
 
@@ -14,11 +14,11 @@ public class ArrayEx6 {
 				continue;
 
 			nums[count++] = nums[i];
-			
+
 		}
-		nums=Arrays.copyOf(nums, count);
-		
-		return count;
+		nums = Arrays.copyOf(nums, count);
+
+		return nums;
 
 	}
 
@@ -27,9 +27,9 @@ public class ArrayEx6 {
 		int[] array = { 1, 1, 2, 2, 3, 4, 5 };
 
 		System.out.println(removeDuplicates(array));
-		
+
 		// output should return remove duplicate elements from the linear array
-		
+
 //		Given a sorted array nums, remove the duplicates
 //		in-place such that each element appears only once and returns the new length. 
 //		Do not allocate extra space for another array; you must do this by modifying

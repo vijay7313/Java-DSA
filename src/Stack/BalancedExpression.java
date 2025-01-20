@@ -1,4 +1,5 @@
 package Stack;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
@@ -13,36 +14,20 @@ public class BalancedExpression {
 
 		Stack<Character> stack = new Stack<>();
 
-		for (char ch : input.toCharArray()) {
+		for (char ch : input.toCharArray())
 
-			if (isLeftBracket(ch)) {
+			if (leftBrackets.contains(ch))
 				stack.push(ch);
-				continue;
-			}
 
-			if (isRightBracket(ch)) {
+			else
 
-				if (stack.isEmpty())
-					return false;
+			if (stack.isEmpty())
+				return false;
 
-				char top = stack.pop();
+			else if (!bracketMatch(stack.pop(), ch))
+				return false;
 
-				if (!bracketMatch(top, ch))
-					return false;
-			}
-
-		}
 		return stack.isEmpty();
-	}
-
-	private boolean isLeftBracket(char ch) {
-
-		return leftBrackets.contains(ch);
-	}
-
-	private boolean isRightBracket(char ch) {
-
-		return rightBrackets.contains(ch);
 	}
 
 	private boolean bracketMatch(char left, char right) {

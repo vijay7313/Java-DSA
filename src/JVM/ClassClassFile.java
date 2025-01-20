@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 public class ClassClassFile {
 
 	public static void main(String[] args) throws ClassNotFoundException {
-
+		
 		Class c = Class.forName("JVM.Student");
 
 		Method[] methods = c.getDeclaredMethods();

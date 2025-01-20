@@ -16,6 +16,6 @@ public class Varargs {
 
 		};
 
-//		varargsPrinter.printMessages("Hi", "Hello", "Welcome");
+		varargsPrinter.printMessages("Hi", "Hello", "Welcome");
 	}
 }

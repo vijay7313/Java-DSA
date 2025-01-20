@@ -26,6 +26,8 @@ public class StreamAPI {
 									.sorted()
 									.collect(Collectors.toList());
 		
+		
+		
 		Stream<Integer> stream = list.stream()
 				.filter(n -> {
 					System.out.println(n);
@@ -37,7 +39,7 @@ public class StreamAPI {
 				})
 				.sorted();
 		
-		stream.forEach(System.out::print);
+		stream.forEach(System.out::println);
 
 		int total = list.stream()
 				.filter(n -> n % 2 == 1)

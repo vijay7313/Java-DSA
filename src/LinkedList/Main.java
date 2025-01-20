@@ -19,9 +19,11 @@ public class Main {
 		list.addFirst(2);
 		list.addFirst(22);
 
-		list.removeLast();
+		list.deleteNode(5);
 
-		System.out.println(list.getKthFromTheEnd(4));
+//		list.removeLast();
+
+//		System.out.println(list.getKthFromTheEnd(4));
 
 		Object[] array = list.toArray();
 		System.out.println(Arrays.toString(array));

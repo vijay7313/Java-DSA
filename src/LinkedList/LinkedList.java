@@ -97,6 +97,25 @@ public class LinkedList<E> {
 		size--;
 	}
 
+	public void deleteNode(int val) {
+
+		var node = first;
+
+		while (node != null)
+			if (node.getValue().equals(val))
+				break;
+			else
+				node = node.getNext();
+
+		while (node != null) {
+			node.setValue(node.getNext().getValue());
+			if (node.getNext().getNext() == null)
+				node.setNext(null);
+			node = node.getNext();
+		}
+		size--;
+	}
+
 	private Node getPreviousOfLastNode() {
 
 		Node current = first;

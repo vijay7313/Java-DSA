@@ -6,5 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

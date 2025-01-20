@@ -9,6 +9,15 @@ public class StreamAPINotes {
 
 	public static void main(String[] args) {
 
+		Object obj = "This is a string";
+
+		// Attempting to cast a String object to Integer will throw ClassCastException
+		try {
+			Integer number = (Integer) obj; // Invalid cast
+		} catch (ClassCastException e) {
+			System.out.println("Caught ClassCastException: " + e.getMessage());
+		}
+
 		List<Integer> list = Arrays.asList(5, 2, 1, 6, 4, 2, 5, 4, 7);
 
 		List<Integer> uList = list.stream()

@@ -2,35 +2,32 @@ package SortingAlgorithm;
 
 import java.util.Arrays;
 
-public class BubbleSort {
+public class SelectionSort {
 
 	public static void main(String[] args) {
 		int[] nums = { 8, 2, 4, 1, 3 };
-		bubbleSort(nums);
+		selectionSort(nums);
 		System.out.println(Arrays.toString(nums));
-
 	}
 
-	public static void bubbleSort(int[] nums) {
-		boolean isSorted;
+	private static void selectionSort(int[] nums) {
+
 		int length = nums.length;
 
 		for (int i = 0; i < length; i++) {
-			isSorted = true;
+			int minIndex = i;
 
-			for (int j = 1; j < length - i; j++)
-				if (nums[j] < nums[j - 1]) {
-					swap(nums, j, j - 1);
-					isSorted = false;
-				}
+			for (int j = i + 1; j < length; j++)
+				if (nums[j] < nums[minIndex])
+					minIndex = j;
 
-			if (isSorted)
-				return;
+			swap(nums, i, minIndex);
 		}
 
 	}
 
 	private static void swap(int[] nums, int index1, int index2) {
+
 		int temp = nums[index1];
 		nums[index1] = nums[index2];
 		nums[index2] = temp;

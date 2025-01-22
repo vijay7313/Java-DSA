@@ -21,7 +21,8 @@ public class SelectionSort {
 				if (nums[j] < nums[minIndex])
 					minIndex = j;
 
-			swap(nums, i, minIndex);
+			if (i != minIndex)
+				swap(nums, i, minIndex);
 		}
 
 	}

@@ -11,7 +11,9 @@ public class MainSorting {
 //
 //		SelectionSort.selectionSort(nums);
 
-		InsertionSort.insertionSort(nums);
+//		InsertionSort.insertionSort(nums);
+		
+		MergeSort.mergeSort(nums);
 
 		System.out.println(Arrays.toString(nums));
 	}

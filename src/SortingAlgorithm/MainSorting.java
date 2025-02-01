@@ -13,7 +13,7 @@ public class MainSorting {
 
 //		InsertionSort.insertionSort(nums);
 		
-		MergeSort.mergeSort(nums);
+		MergeSort.sort(nums);
 
 		System.out.println(Arrays.toString(nums));
 	}

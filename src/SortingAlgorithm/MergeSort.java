@@ -2,7 +2,7 @@ package SortingAlgorithm;
 
 public class MergeSort {
 
-	public static void mergeSort(int[] nums) {
+	public static void sort(int[] nums) {
 
 		if (nums.length < 2)
 			return;
@@ -19,8 +19,8 @@ public class MergeSort {
 		for (int i = middle; i < nums.length; i++)
 			right[i - middle] = nums[i];
 
-		mergeSort(left);
-		mergeSort(right);
+		sort(left);
+		sort(right);
 
 		merge(left, right, nums);
 	}
